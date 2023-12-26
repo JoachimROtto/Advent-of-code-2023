@@ -32,7 +32,7 @@ public class DaySix {
         the boat (Your choice) and the ride and ends after the given time. The charging time sets
         the speed so the first example may lead to 3 seconds charging time and 4 seconds ride with
         speed 3 and therefor distance 12. A race is won by beating the record. How many variants win.
-        Product!
+        Multiply!
          */
 
         //Y = (T -C) C / M
