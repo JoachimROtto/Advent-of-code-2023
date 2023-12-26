@@ -25,10 +25,11 @@ public class AoCMain {
             dayThree.displayResults();
             DayFour dayFour= new DayFour(isDebug, inputConnector);
             dayFour.displayResults();
+            DayFive dayFive= new DayFive(isDebug, inputConnector);
+            dayFive.displayResults();
         }
-        DayFive dayFive= new DayFive(isDebug, inputConnector);
-        dayFive.displayResults();
-
+        DaySix daySix= new DaySix(isDebug, inputConnector);
+        daySix.displayResults();
 
     }
 }
