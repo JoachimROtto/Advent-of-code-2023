@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="DaySix solved">
+    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="DayFive solved">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702487450196</updated>
       <workItem from="1702487451225" duration="6507000" />
-      <workItem from="1703184648114" duration="49037000" />
+      <workItem from="1703184648114" duration="46961000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -120,15 +120,7 @@
       <option name="project" value="LOCAL" />
       <updated>1703590509566</updated>
     </task>
-    <task id="LOCAL-00003" summary="DaySix solved">
-      <option name="closed" value="true" />
-      <created>1703605795256</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1703605795256</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,8 +130,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="DayFive solved" />
-    <MESSAGE value="DaySix solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="DaySix solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="DayFive solved" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
