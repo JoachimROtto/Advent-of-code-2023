@@ -42,12 +42,12 @@ public class DayOne {
 
         //Concat the first and last digits of a line and add them together across multiple lines
         //Sol: 54081
-        System.out.println("Day 1: " + input.stream().mapToInt(this::digitsInLine).sum());
+        System.out.println("Day 1 (Exp.:54081): " + input.stream().mapToInt(this::digitsInLine).sum());
 
         //Part 2: Ooops "eight",... is also a digit!
         //Sol: 54649
         input.replaceAll(this::replaceWords);
-        System.out.println("Day 1 Part 2: " + input.stream().mapToInt(this::digitsInLine).sum());
+        System.out.println("Day 1 Part 2 (Exp.:54649): " + input.stream().mapToInt(this::digitsInLine).sum());
     }
 
       private  int digitsInLine(String line){

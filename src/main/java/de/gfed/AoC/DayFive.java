@@ -78,12 +78,12 @@ public class DayFive {
         processInput(input);
 
         //35
-        System.out.println("Day 3: " + Arrays.stream(processTransitions()).min());
+        System.out.println("Day 5: " + Arrays.stream(processTransitions()).min());
 
         // Seeds consists of a pair, start and range: 79 14 is 79, 80, ... 79+14
         // Sol. for Ex. 46
 
-        System.out.println("Day 3 Part 2: " + processTransitionsPart2());
+        System.out.println("Day 5 Part 2: " + processTransitionsPart2());
         // Step X: 79, 14 .. -> 79 1 14 1 ... und dann mit Part2 prozessieren
 
     }
@@ -95,13 +95,13 @@ public class DayFive {
         processInput(input);
 
         //Sol. 313045984
-        System.out.println("Day 3: " + Arrays.stream(processTransitions()).min());
+        System.out.println("Day 5 (Exp.:313045984): " + Arrays.stream(processTransitions()).min());
         //Sol. 20283860
-        System.out.println("Day 3 Part 2: " + processTransitionsPart2());
+        System.out.println("Day 5 Part 2 (Exp.:20283860): " + processTransitionsPart2());
 
     }
 
-    public void processInput(List<String> input ){
+    private void processInput(List<String> input ){
         String source="";
 
         seeds= string2LongArray(input.get(0).substring(input.get(0).indexOf(":")+2));
@@ -134,7 +134,7 @@ public class DayFive {
         }
     }
 
-    public long[] processTransitions(){
+    private long[] processTransitions(){
         String target;
         long []map;
         long pos;
@@ -159,7 +159,7 @@ public class DayFive {
         return result;
     }
 
-    public long processTransitionsPart2() {
+    private long processTransitionsPart2() {
         String target;
         // input
         List<Long[]> stateList = seedsList;
@@ -222,7 +222,7 @@ public class DayFive {
         return result;
     }
 
-    public long[] string2LongArray(String line){
+    private long[] string2LongArray(String line){
         return Arrays.stream(
                         line.split(" "))
                 .mapToLong(Long::parseLong).toArray();

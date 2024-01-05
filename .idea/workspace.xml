@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="typo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySeven.java" afterDir="false" />
+    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="DayFive solved">
+      <change afterPath="$PROJECT_DIR$/cookie.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cookie.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySeven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySeven.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DayFive" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "DaySix",
+    "git-widget-placeholder": "FirstSlightRefacoring",
     "last_directory_selection": "/Users/joe/Desktop/AoC/AdventOfCode/src/main/java/de/gfed",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -56,10 +65,9 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.22433035",
     "project.structure.side.proportion": "0.3371758",
-    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.de.gfed.AoC.AoCMain">
     <configuration name="AoCMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.gfed.AoCMain" />
@@ -104,8 +112,6 @@
       <updated>1702487450196</updated>
       <workItem from="1702487451225" duration="6507000" />
       <workItem from="1703184648114" duration="46961000" />
-      <workItem from="1704144497721" duration="599000" />
-      <workItem from="1704285573656" duration="27372000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -123,15 +129,7 @@
       <option name="project" value="LOCAL" />
       <updated>1703590509566</updated>
     </task>
-    <task id="LOCAL-00003" summary="typo">
-      <option name="closed" value="true" />
-      <created>1703621638556</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1703621638556</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,8 +150,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="DayFive solved" />
-    <MESSAGE value="typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="DayFive solved" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

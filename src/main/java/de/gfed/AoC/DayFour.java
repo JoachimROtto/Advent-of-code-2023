@@ -33,8 +33,18 @@ public class DayFour {
                 "Card 5: 87 83 22 28 36 | 88 30 70 12 93 22 82 36",
                 "Card 6: 31 18 13 56 74 | 74 77 10 23 35 67 36 11");
 //-> 13 // Part 2: 30
-        List <List<Integer>> numbers = preProcessInput(input);
 
+        /*
+        A number of cards show an ID, a number of winning numbers and your own numbers.
+        A match is one point, each further doubles the result. Add up!
+
+        Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+        Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
+
+         leads 8 + 2
+         */
+
+        List <List<Integer>> numbers = preProcessInput(input);
 
         List<Integer> winnings= new ArrayList<Integer>();
         for( List<Integer> number : numbers) {
@@ -51,23 +61,13 @@ public class DayFour {
         inputConnector.setDay(4);
         List<String> input = inputConnector.getInput();
 
-        /*
-        A number of cards show an ID, a number of winning numbers and your own numbers.
-        A match is one point, each further doubles the result. Add up!
-
-        Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
-        Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
-
-         leads 8 + 2
-         */
-
         List <List<Integer>> numbers = preProcessInput(input);
         List<Integer> winnings= new ArrayList<Integer>();
         for( List<Integer> number : numbers) {
             winnings.add(determineWinnings(number));
         }
         //Sol. 26218
-        System.out.println("Day 4: " + winnings.stream().mapToInt(this::power).sum());
+        System.out.println("Day 4 (Exp.:26218): " + winnings.stream().mapToInt(this::power).sum());
         //System.out.println("Day 4 Part 2: " + numbers2.stream().mapToInt(DayFour::determineWinningsPartTwo).sum());
 
         /*
@@ -75,7 +75,7 @@ public class DayFour {
         And the copies play.
          */
         //Sol. 9997537
-        System.out.println("Day 4 Part 2: " + determineWinningsPartTwo(winnings));
+        System.out.println("Day 4 Part 2 (Exp.:9997537): " + determineWinningsPartTwo(winnings));
 
     }
 

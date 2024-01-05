@@ -39,7 +39,7 @@ public class DaySix {
         processInput(input);
 
         //288
-        System.out.println("Day 3: " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6: " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
 
         // Oops! Bad kerning. 7 15 30 means 71530
 
@@ -47,7 +47,7 @@ public class DaySix {
         distance = new long[]{Long.parseLong(input.get(1).replaceAll(" ", "").split(":")[1])};
 
         //71503
-        System.out.println("Day 3 Part 2: "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6 Part 2: "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
 
     }
 
@@ -58,7 +58,7 @@ public class DaySix {
         processInput(input);
 
         //Sol. 741000
-        System.out.println("Day 3: " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6 (Exp.:741000): " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
 
         // Oops! Bad kerning. 7 15 30 means 71530
 
@@ -66,12 +66,12 @@ public class DaySix {
         distance = new long[]{Long.parseLong(input.get(1).replaceAll(" ", "").split(":")[1])};
 
         //38220708
-        System.out.println("Day 3 Part 2: "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6 Part 2 (Exp.:38220708): "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
 
     }
 
 
-    public int[] getWonRaces(){
+    private int[] getWonRaces(){
         int [] result = new int[time.length];
         int count;
         for (int i = 0; i<time.length;i++){
@@ -85,12 +85,12 @@ public class DaySix {
         return result;
     }
 
-    public void processInput(List <String> input){
+    private void processInput(List <String> input){
         time= string2LongArray(input.get(0).substring(input.get(0).indexOf(":")+2));
         distance= string2LongArray(input.get(1).substring(input.get(1).indexOf(":")+2));
     }
 
-    public long[] string2LongArray(String line){
+    private long[] string2LongArray(String line){
         return Arrays.stream(
                         line.split(" ")).filter(c -> !Objects.equals(c, ""))
                 .mapToLong(Long::parseLong).toArray();
