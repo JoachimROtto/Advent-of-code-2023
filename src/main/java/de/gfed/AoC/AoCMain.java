@@ -32,6 +32,5 @@ public class AoCMain {
         }
         DaySeven daySeven= new DaySeven(isDebug, inputConnector);
         daySeven.displayResults();
-
     }
 }

@@ -59,7 +59,7 @@
     "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.de.gfed.AoC.AoCMain">
     <configuration name="AoCMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.gfed.AoCMain" />
@@ -154,5 +154,12 @@
     <MESSAGE value="DayFive solved" />
     <MESSAGE value="typo" />
     <option name="LAST_COMMIT_MESSAGE" value="typo" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="map[i+1]" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
