@@ -28,23 +28,7 @@ public class DayThree {
                 "........*.=..............588.....*786......$.........*........*.......390*.....886...*....227...728..852.......606....*863.......916..396...",
                 ".....538...287................301........133.....539..........33.537......466..$...793....*........*...............218.....721........*.....",
                 "...............986.$.......=.......................................*...%...............222..-.......701.271...............#.........437.....");
-        //Liste: Nummer, Zeile, Spalte
-        List<Integer[]> listOfNumbers = buildListOfNumbers(input);
-        //Liste Symbole: Zeile, Spalte
-        List<Integer[]> listOfSymbols = buildListOfSymbols(input, "[^.0-9]");
 
-        System.out.println("Day 3: " + sumPartNumbers(listOfNumbers, listOfSymbols));
-
-        //List asterisks: row, col
-        List<Integer[]> listOfAsterisks = buildListOfSymbols(input, "[*]");
-
-        System.out.println("Day 3 Part 2: " + sumGearRatio(listOfNumbers, listOfAsterisks));
-
-    }
-
-    public void displayResult(){
-        inputConnector.setDay(3);
-        List<String> input = inputConnector.getInput();
 
         /*
          A visual representation of some engine consists of lots of numbers and symbols.
@@ -57,13 +41,28 @@ public class DayThree {
 
          leads to 858 + 801 + 487 + 140 + 222
          */
+        List<Integer[]> listOfNumbers = buildListOfNumbers(input);
+        List<Integer[]> listOfSymbols = buildListOfSymbols(input, "[^.0-9]");
+
+        System.out.println("Day 3: " + sumPartNumbers(listOfNumbers, listOfSymbols));
+
+        List<Integer[]> listOfAsterisks = buildListOfSymbols(input, "[*]");
+
+        System.out.println("Day 3 Part 2: " + sumGearRatio(listOfNumbers, listOfAsterisks));
+
+    }
+
+    public void displayResult(){
+        inputConnector.setDay(3);
+        List<String> input = inputConnector.getInput();
+
         //List: number, row, col
         List<Integer[]> listOfNumbers = buildListOfNumbers(input);
         //List symbol: row, col
         List<Integer[]> listOfSymbols = buildListOfSymbols(input, "[^.0-9]");
 
         //Sol. 540131
-        System.out.println("Day 3: "+ sumPartNumbers(listOfNumbers, listOfSymbols));
+        System.out.println("Day 3 (Exp.:540131): "+ sumPartNumbers(listOfNumbers, listOfSymbols));
 
         /*
             And a "gear" consists of two numbers sharing the same asterisk with their product
@@ -74,7 +73,7 @@ public class DayThree {
         List<Integer[]> listOfAsterisks = buildListOfSymbols(input, "[*]");
 
         //Sol. 86879020
-        System.out.println("Day 3 Part 2: " + sumGearRatio(listOfNumbers, listOfAsterisks));
+        System.out.println("Day 3 Part 2 (Exp.:86879020): " + sumGearRatio(listOfNumbers, listOfAsterisks));
 
     }
 

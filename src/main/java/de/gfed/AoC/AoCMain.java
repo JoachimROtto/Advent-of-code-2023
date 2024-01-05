@@ -1,20 +1,32 @@
 package de.gfed.AoC;
 
 
+import java.io.*;
+
 public class AoCMain {
     public static void main(String[] args) {
         boolean isDebug=false;
         AoCInputConnector inputConnector = new AoCInputConnector();
 
         /*
-        Paste your session cookie here (Browser ->Log into www.adventofcode.com ->F12 ->App ->
+        Paste your session cookie
+        (Browser ->Log into www.adventofcode.com ->F12 ->App ->
         Cookies (on the left) ->adventofcode.com ->session
+        in <Projectdirectory>cookie.txt
          */
         String cookie="";
+        try {
 
+            BufferedReader reader = new BufferedReader(new FileReader("cookie.txt"));
+            cookie = reader.readLine();
+            reader.close();
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         inputConnector.setCookie("session=" + cookie);
 
-        boolean checkAll=false;
+        boolean checkAll=true;
 
         if (checkAll){
             DayOne dayOne= new DayOne(isDebug, inputConnector);
@@ -29,8 +41,9 @@ public class AoCMain {
             dayFive.displayResults();
             DaySix daySix= new DaySix(isDebug, inputConnector);
             daySix.displayResults();
+            DaySeven daySeven= new DaySeven(isDebug, inputConnector);
+            daySeven.displayResults();
+            System.out.println("Expections are personalized");
         }
-        DaySeven daySeven= new DaySeven(isDebug, inputConnector);
-        daySeven.displayResults();
     }
 }

@@ -47,7 +47,7 @@ public class DayTwo {
          (= Content of the bag)
          */
         // Sol. 2085
-        System.out.println("Day 2: " + input.stream().mapToInt(this::filteredID).sum());
+        System.out.println("Day 2 (Exp.:2085): " + input.stream().mapToInt(this::filteredID).sum());
 
         /*
             And what are fewest needed number of cubes to make a game valid/possible?
@@ -55,7 +55,7 @@ public class DayTwo {
             Multiply! (=256) And add.
          */
         //Sol. 79315
-        System.out.println("Day 2 Part 2: " + input.stream().mapToInt(this::maxCubeProduct).sum());
+        System.out.println("Day 2 Part 2 (Exp.:79315): " + input.stream().mapToInt(this::maxCubeProduct).sum());
 
     }
 

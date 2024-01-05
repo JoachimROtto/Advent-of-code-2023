@@ -56,11 +56,11 @@ public class DaySeven {
 
 
         //Sol.  250946742
-        System.out.println("Day 7: " + processInput(input, false));
+        System.out.println("Day 7 (Exp.:250946742): " + processInput(input, false));
 
 
         //Sol. 251824095
-        System.out.println("Day 7: Part 2" + processInput(input, true));
+        System.out.println("Day 7 (Exp.:251824095): Part 2" + processInput(input, true));
 
     }
 
