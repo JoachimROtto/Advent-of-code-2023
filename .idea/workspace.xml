@@ -4,33 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCInputConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayThree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayTwo.java" afterDir="false" />
+    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="typo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayEight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "JoachimROtto"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="775e3d3d-979e-479f-9378-118cc41ccb92" />
+        <option name="url" value="https://github.com/JoachimROtto/Advent-of-code-2023.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2ZUrMMu9GE8RI1WrFmdPCVfu1mI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "DayEight",
     "last_directory_selection": "/Users/joe/Desktop/AoC/AdventOfCode/src/main/java/de/gfed",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -55,6 +70,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.22433035",
     "project.structure.side.proportion": "0.3371758",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -89,6 +105,8 @@
       <list>
         <item itemvalue="Application.de.gfed.AoC.AoCMain" />
         <item itemvalue="Application.AoCMain" />
+        <item itemvalue="Application.de.gfed.AoC.AoCMain" />
+        <item itemvalue="Application.AoCMain" />
       </list>
     </recent_temporary>
   </component>
@@ -100,14 +118,57 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702487450196</updated>
-      <workItem from="1702487451225" duration="3519000" />
+      <workItem from="1702487451225" duration="6507000" />
+      <workItem from="1703184648114" duration="46961000" />
+      <workItem from="1704144497721" duration="599000" />
+      <workItem from="1704285573656" duration="27372000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1702491227427</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702491227427</updated>
+    </task>
+    <task id="LOCAL-00002" summary="DayFive solved">
+      <option name="closed" value="true" />
+      <created>1703590509566</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703590509566</updated>
+    </task>
+    <task id="LOCAL-00003" summary="typo">
+      <option name="closed" value="true" />
+      <created>1703621638556</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703621638556</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="DayFive solved" />
+    <MESSAGE value="typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="typo" />
   </component>
 </project>
