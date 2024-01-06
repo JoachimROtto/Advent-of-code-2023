@@ -41,14 +41,19 @@ public class DayEight {
         input.remove(0);
         Map <String, String[]>successor = mapToSuccessors(input);
 
-        System.out.println("Day 8: " + takeAWalk(new String[]{"AAA"}, "ZZZ", directions, successor));
+        System.out.println("Day 8: " + takeAWalk("AAA", "ZZZ", directions, successor));
 
         /* Now you are a ghost and start at every element that ends with A. You follow the
         instruction for each element and you are done when every element ends with a Z. How
         many steps do you need now?
          */
 
-        System.out.println("Day 8 Part 2: " + takeAWalk(evalStartPositions(successor), ".*Z$", directions, successor));
+        //System.out.println("Day 8 Part 2: " + takeAWalk(evalStartPositions(successor), ".*Z$", directions, successor));
+        String[] startNodes = evalStartPositions(successor);
+        long result=1;
+        for (String startNode : startNodes) {
+            result = lcm(result, takeAWalk(startNode, ".*Z$", directions, successor));
+        }
 
 
     }
@@ -63,11 +68,23 @@ public class DayEight {
         Map <String, String[]>successor = mapToSuccessors(input);
 
         // Sol. 20659
-        System.out.println("Day 8: " + takeAWalk(new String[]{"AAA"}, "ZZZ", directions, successor));
+        System.out.println("Day 8 (Exp. 20659): " + takeAWalk("AAA", "ZZZ", directions, successor));
 
         // Sol. this way takes too long
-        System.out.println("Day 8 Part 2: " + takeAWalk(evalStartPositions(successor), ".*Z$", directions, successor));
-
+        // System.out.println("Day 8 Part 2 (Exp. ): " + takeAWalk(evalStartPositions(successor), ".*Z$", directions, successor));
+        /*
+        Lets do sort of research
+        Find startNodes (STRG+F) and get endNodes + length (println added)
+        Find endNodes with this endNodes
+        Be puzzled that each endNodes leads to exactly the same node in the same time
+        ->result is the least common multiplier of the walks!
+         */
+        String[] startNodes = evalStartPositions(successor);
+        long result=1;
+        for (String startNode : startNodes) {
+            result = lcm(result, takeAWalk(startNode, ".*Z$", directions, successor));
+        }
+        System.out.println("Day 8 Part 2 (Exp. 15690466351717): " + result);
     }
 
     private Map<String, String[]> mapToSuccessors(List<String> input){
@@ -78,21 +95,18 @@ public class DayEight {
         return result;
     }
 
-    private long takeAWalk(String[] starts, String end, String directions, Map<String, String[]> successor){
+    private long takeAWalk(String starts, String end, String directions, Map<String, String[]> successor){
         long result=0;
         int directionIndex=0;
-        String[] position=starts;
-        boolean isEnd=false;
-        while (!isEnd){
-            isEnd=true;
-            for (int i= 0; i<position.length; i++){
-                position[i]=successor.get(position[i])
+        String position=starts;
+        while (!position.matches(end)){
+                position=successor.get(position)
                         [directions.substring(directionIndex,directionIndex+1).compareTo("L")==0?0:1];
-                isEnd=isEnd && position[i].matches(end);
-            }
             result++;
             directionIndex=(directionIndex+1) % directions.length();
-        }
+            }
+
+
         return result;
     }
 
@@ -103,5 +117,14 @@ public class DayEight {
                 result.add(key);
         }
         return result.toArray(new String[0]);
+    }
+    private long lcm(long x, long y) {
+        long max = Math.max(x, y);
+        long min = Math.min(x, y);
+        long lcm = max;
+        while (lcm % min != 0) {
+            lcm += max;
+        }
+        return lcm;
     }
 }
