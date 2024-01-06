@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="typo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayEight.java" afterDir="false" />
+    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="DayFive solved">
+      <change afterPath="$PROJECT_DIR$/cookie.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cookie.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayFour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySeven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySeven.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DaySix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,20 +37,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "JoachimROtto"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="775e3d3d-979e-479f-9378-118cc41ccb92" />
-        <option name="url" value="https://github.com/JoachimROtto/Advent-of-code-2023.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -168,7 +163,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="DayFive solved" />
-    <MESSAGE value="typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="DayFive solved" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="map[i+1]" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
