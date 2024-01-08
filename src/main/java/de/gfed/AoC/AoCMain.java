@@ -26,7 +26,7 @@ public class AoCMain {
         }
         inputConnector.setCookie("session=" + cookie);
 
-        boolean checkAll=true;
+        boolean checkAll=false;
 
         if (checkAll){
             DayOne dayOne= new DayOne(isDebug, inputConnector);
@@ -43,7 +43,11 @@ public class AoCMain {
             daySix.displayResults();
             DaySeven daySeven= new DaySeven(isDebug, inputConnector);
             daySeven.displayResults();
+            DayEight dayEight= new DayEight(isDebug, inputConnector);
+            dayEight.displayResults();
             System.out.println("Expections are personalized");
         }
+        DayNine dayNine= new DayNine(isDebug, inputConnector);
+        dayNine.displayResults();
     }
 }
