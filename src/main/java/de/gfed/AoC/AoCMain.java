@@ -5,7 +5,7 @@ import java.io.*;
 
 public class AoCMain {
     public static void main(String[] args) {
-        boolean isDebug=true;
+        boolean isDebug=false;
         AoCInputConnector inputConnector = new AoCInputConnector();
 
         /*
