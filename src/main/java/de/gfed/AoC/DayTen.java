@@ -1,7 +1,6 @@
 package de.gfed.AoC;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 
 public class DayTen {
@@ -86,11 +85,9 @@ public class DayTen {
         int[] pos= findStart(input);
         int[] steps=new int[4];
 
-        int quadrantOut;
-
         if (pos[0]!= input.size()) {
             steps[0]=Math.max(result, followThePipe(new int[]{pos[0] + 1, pos[1], 0}, input));
-            result = Math.max(steps[0], result);
+            result = steps[0];
         }
 
         if (pos[1]!= 0) {
