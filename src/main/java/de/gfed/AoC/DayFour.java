@@ -49,7 +49,7 @@ public class DayFour {
             winnings.add(determineWinnings(number));
         }
 
-        System.out.println("Day 4: " + winnings.stream().mapToInt(this::power).sum());
+        System.out.println("Day 4: " + winnings.stream().mapToInt(this::powerVariant).sum());
 
         System.out.println("Day 4 Part 2: " + determineWinningsPartTwo(winnings));
 
@@ -65,7 +65,7 @@ public class DayFour {
             winnings.add(determineWinnings(number));
         }
         //Sol. 26218
-        System.out.println("Day 4 (Exp.:26218): " + winnings.stream().mapToInt(this::power).sum());
+        System.out.println("Day 4 (Exp.:26218): " + winnings.stream().mapToInt(this::powerVariant).sum());
         //System.out.println("Day 4 Part 2: " + numbers2.stream().mapToInt(DayFour::determineWinningsPartTwo).sum());
 
         /*
@@ -106,7 +106,7 @@ public class DayFour {
         return count;
     }
 
-    private  int power(int number){
+    private  int powerVariant(int number){
         return (int) Math.pow(2, number-1);
     }
 
