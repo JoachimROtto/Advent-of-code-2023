@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 
 public class AoCInputConnector {
-    private String urlPrefix = "https://adventofcode.com/2023/day/";
-    private String urlPostfix="/input";
+    private final String urlPrefix = "https://adventofcode.com/2023/day/";
+    private final String urlPostfix="/input";
     private String cookie;
     private int day;
     AoCInputConnector(){
@@ -27,8 +27,7 @@ public class AoCInputConnector {
         return fetchContentFromURL(url);
     }
     private  List<String> fetchContentFromURL(String URL) {
-        StringBuilder content = new StringBuilder();
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         try {
             java.net.URL oracle = new URI(URL).toURL();
             URLConnection conn = oracle.openConnection();
@@ -42,7 +41,7 @@ public class AoCInputConnector {
             }
             bufferedReader.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return result;
     }

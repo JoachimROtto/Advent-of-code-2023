@@ -6,7 +6,6 @@ import java.util.*;
 public class DayEight {
     boolean debugMode;
     AoCInputConnector inputConnector;
-    long test = 15690466351717L;
 
     DayEight(boolean debugMode, AoCInputConnector inputConnector){
         this.debugMode=debugMode;
@@ -54,7 +53,7 @@ public class DayEight {
         for (String startNode : startNodes) {
             result = lcm(result, takeAWalk(startNode, ".*Z$", directions, successor));
         }
-
+        System.out.println("Day 8 Part 2: " + result);
 
     }
 
@@ -71,7 +70,6 @@ public class DayEight {
         System.out.println("Day 8 (Exp. 20659): " + takeAWalk("AAA", "ZZZ", directions, successor));
 
         // Sol. this way takes too long
-        // System.out.println("Day 8 Part 2 (Exp. ): " + takeAWalk(evalStartPositions(successor), ".*Z$", directions, successor));
         /*
         Lets do sort of research
         Find startNodes (STRG+F) and get endNodes + length (println added)

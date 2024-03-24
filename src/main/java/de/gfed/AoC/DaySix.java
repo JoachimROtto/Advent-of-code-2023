@@ -1,8 +1,6 @@
 package de.gfed.AoC;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DaySix {
     boolean debugMode;
@@ -39,7 +37,7 @@ public class DaySix {
         processInput(input);
 
         //288
-        System.out.println("Day 6: " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6: " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));
 
         // Oops! Bad kerning. 7 15 30 means 71530
 
@@ -47,7 +45,7 @@ public class DaySix {
         distance = new long[]{Long.parseLong(input.get(1).replaceAll(" ", "").split(":")[1])};
 
         //71503
-        System.out.println("Day 6 Part 2: "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6 Part 2: "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));
 
     }
 
@@ -58,7 +56,7 @@ public class DaySix {
         processInput(input);
 
         //Sol. 741000
-        System.out.println("Day 6 (Exp.:741000): " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6 (Exp.:741000): " + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));
 
         // Oops! Bad kerning. 7 15 30 means 71530
 
@@ -66,7 +64,7 @@ public class DaySix {
         distance = new long[]{Long.parseLong(input.get(1).replaceAll(" ", "").split(":")[1])};
 
         //38220708
-        System.out.println("Day 6 Part 2 (Exp.:38220708): "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));;
+        System.out.println("Day 6 Part 2 (Exp.:38220708): "  + Arrays.stream(getWonRaces()).reduce(1, (a,b) -> a*b));
 
     }
 

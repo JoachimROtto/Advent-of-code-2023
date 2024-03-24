@@ -1,11 +1,9 @@
 package de.gfed.AoC;
 
-
 import java.io.*;
 
 public class AoCMain {
     public static void main(String[] args) {
-        boolean isDebug = false;
         AoCInputConnector inputConnector = new AoCInputConnector();
 
         /*
@@ -26,7 +24,8 @@ public class AoCMain {
         }
         inputConnector.setCookie("session=" + cookie);
 
-        boolean checkAll = false;
+        boolean isDebug = false;
+        boolean checkAll = true;
 
         if ( checkAll ) {
             DayOne dayOne = new DayOne(isDebug, inputConnector);
@@ -53,7 +52,7 @@ public class AoCMain {
             dayEleven.displayResults();
             DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
             dayTwelve.displayResults();
-            System.out.println("Expections are personalized");
+            System.out.println("Expectations are individual");
         }
     }
 }

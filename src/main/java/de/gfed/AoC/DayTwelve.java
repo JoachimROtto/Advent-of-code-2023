@@ -1,7 +1,6 @@
 package de.gfed.AoC;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class DayTwelve {
     boolean debugMode;
@@ -67,10 +66,10 @@ public class DayTwelve {
                 line.substring(line.indexOf(" ")+1).split(",")).mapToInt(Integer::parseInt).toArray();
 
         done = new HashMap<>();
-        return countPosibilities(line.substring(0, line.indexOf(" ")), 0, groupSizesWorkingSprings,0);
+        return countPossibilities(line.substring(0, line.indexOf(" ")), 0, groupSizesWorkingSprings,0);
     }
 
-    private long countPosibilities(String line, int lineStart, int[] springs, int curSpring){
+    private long countPossibilities(String line, int lineStart, int[] springs, int curSpring){
         // Ende der Zeile, Ende der Quellen auch?
         if (line.length()<=lineStart)
             return springs.length==curSpring?1:0;
@@ -88,9 +87,9 @@ public class DayTwelve {
 
         long result=0;
 
-        // Rekursion nach Zeichen bis zur ersten # (->Quelle zwingend erarbeiten)
+        // Rekursion nach Zeichen bis zur ersten # (→ Quelle zwingend erarbeiten)
         if (!(line.charAt(lineStart)=='#')){
-            result = result + countPosibilities(line, lineStart+1, springs, curSpring);
+            result = result + countPossibilities(line, lineStart+1, springs, curSpring);
         }
 
         // Test und ggf. Abbruch: Kann die line mit der Quelle beginnen? (keine Punkte drin, keine # dahinter)
@@ -99,12 +98,12 @@ public class DayTwelve {
                 (line.charAt(lineStart+ (springs[curSpring]))=='#')))
             return setAndReturnCache(line, lineStart, springs, curSpring, result);
 
-        result =result + countPosibilities(line, lineStart+springs[curSpring] +1, springs, curSpring+1);
+        result =result + countPossibilities(line, lineStart+springs[curSpring] +1, springs, curSpring+1);
         return setAndReturnCache(line, lineStart, springs, curSpring, result);
     }
 
     private  List<String> unfoldForPartTwo(List<String> input) {
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         input.forEach(line ->{
             result.add(
                     String.join("?", Collections.nCopies(5, line.substring(0, line.indexOf(" ")))) + " " +

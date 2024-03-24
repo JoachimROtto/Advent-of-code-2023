@@ -60,7 +60,7 @@ public class DaySeven {
 
 
         //Sol. 251824095
-        System.out.println("Day 7 (Exp.:251824095): Part 2" + processInput(input, true));
+        System.out.println("Day 7 Part 2 (Exp.:251824095):" + processInput(input, true));
 
     }
 
@@ -121,7 +121,7 @@ public class DaySeven {
 
         if ( bPart2 ) {
             if ( charCounts.get("J") != null ) {
-                if ( charCounts.get("J") == count ) {
+                if ( Objects.equals(charCounts.get("J"), count) ) {
                     switch (count) {
                         case 1:
                         case 2:

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class DayFour {
@@ -46,7 +44,7 @@ public class DayFour {
 
         List <List<Integer>> numbers = preProcessInput(input);
 
-        List<Integer> winnings= new ArrayList<Integer>();
+        List<Integer> winnings= new ArrayList<>();
         for( List<Integer> number : numbers) {
             winnings.add(determineWinnings(number));
         }
@@ -62,7 +60,7 @@ public class DayFour {
         List<String> input = inputConnector.getInput();
 
         List <List<Integer>> numbers = preProcessInput(input);
-        List<Integer> winnings= new ArrayList<Integer>();
+        List<Integer> winnings= new ArrayList<>();
         for( List<Integer> number : numbers) {
             winnings.add(determineWinnings(number));
         }
@@ -81,7 +79,7 @@ public class DayFour {
 
     private  List <List<Integer>>  preProcessInput(List<String> input){
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        input.stream().forEach(line ->{
+        input.forEach(line ->{
             //keep it readable
             line=line.replace("  ", " "); // no empty element followed by number < 10
             String[] numStrings=line.replace("| ", "")
@@ -95,7 +93,7 @@ public class DayFour {
 
     }
     private  int determineWinnings(List<Integer> input){
-        int winningNumber = 0;
+        int winningNumber;
         int count = 0;
         // Assumption: Always 10 winning + 25 own numbers ; Winning numbers are clear
         // Assumption Example : Always 5 winning + 8 own numbers ; Winning numbers are clear

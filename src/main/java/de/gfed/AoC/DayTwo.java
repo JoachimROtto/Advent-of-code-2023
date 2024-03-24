@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 
 public class DayTwo {
-    static Map<String, Integer> maxDice  = new HashMap<String, Integer>() {{
+    static Map<String, Integer> maxDice  = new HashMap<>() {{
         put("red", 12);
         put("green", 13);
         put("blue", 14);
@@ -74,7 +74,7 @@ public class DayTwo {
         String[] cubes= game.split(",");
         Arrays.stream(cubes).forEach(cube ->{
             String color = cube.substring(cube.indexOf(" ",1)+1);
-            Integer count =Integer.parseInt(cube.substring(1, cube.indexOf(" ",1)));
+            int count =Integer.parseInt(cube.substring(1, cube.indexOf(" ",1)));
             result.set(result.get() && count <= maxDice.get(color)) ;
         });
         return result.get();
@@ -82,7 +82,7 @@ public class DayTwo {
 
     private  int maxCubeProduct(String line){
         String[] games= line.substring(line.indexOf(":")+1).split(";");
-        Map<String, Integer> maxDiceLoc  = new HashMap<String, Integer>() {{
+        Map<String, Integer> maxDiceLoc  = new HashMap<>() {{
             put("red", 0);
             put("green", 0);
             put("blue", 0);
@@ -93,12 +93,12 @@ public class DayTwo {
         return maxDiceLoc.values().stream().reduce(1, (a,b) -> a*b);
     }
 
-    private  void updateMaxCubes(Map maxCubes, String game){
+    private  void updateMaxCubes(Map<String, Integer> maxCubes, String game){
         String[] cubes= game.split(",");
         Arrays.stream(cubes).forEach(cube ->{
             String color = cube.substring(cube.indexOf(" ",1)+1);
             Integer count =Integer.parseInt(cube.substring(1, cube.indexOf(" ",1)));
-            if ( (Integer) maxCubes.get(color) < count)
+            if ( maxCubes.get(color) < count)
                 maxCubes.put(color,count);
         });
     }

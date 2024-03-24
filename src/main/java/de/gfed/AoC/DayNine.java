@@ -45,7 +45,7 @@ public class DayNine {
          */
 
 
-        System.out.println("Day 8: " + input.stream().mapToLong(this::predictNext).sum());
+        System.out.println("Day 9: " + input.stream().mapToLong(this::predictNext).sum());
 
         /*
         And now backwards: Add a 0 add the beginning and extrapolate (first of line - new first
@@ -59,7 +59,7 @@ public class DayNine {
           Ex. -3
          */
         isPart2=true;
-        System.out.println("Day 8 Part 2: " + input.stream().mapToLong(this::predictNext).sum());
+        System.out.println("Day 9 Part 2: " + input.stream().mapToLong(this::predictNext).sum());
 
 
     }
@@ -70,27 +70,26 @@ public class DayNine {
         input = new ArrayList<>(input);
 
         // Sol. 1637452029
-       System.out.println("Day 8 (Exp. 1637452029): " + input.stream().mapToLong(this::predictNext).sum());
+       System.out.println("Day 9 (Exp. 1637452029): " + input.stream().mapToLong(this::predictNext).sum());
         isPart2=true;
         //Sol. 908
-        System.out.println("Day 8 Part 2 (Exp. 908): " + input.stream().mapToLong(this::predictNext).sum());
+        System.out.println("Day 9 Part 2 (Exp. 908): " + input.stream().mapToLong(this::predictNext).sum());
 
     }
 
 
     private long predictNext(String line){
-        return predictNextRecursion(string2LongList(line));
+        return predictNextRecursive(string2LongList(line));
     }
 
-    private long predictNextRecursion(List<Long> line){
-        long result =0;
+    private long predictNextRecursive(List<Long> line){
         if (line.stream().allMatch(val ->val==0)) {
             return 0;
         } else{
             if (!isPart2) {
-                return line.get(line.size() - 1) + predictNextRecursion(nextLine(line));
+                return line.get(line.size() - 1) + predictNextRecursive(nextLine(line));
             } else{
-                return line.get(0) -predictNextRecursion(nextLine(line));
+                return line.get(0) - predictNextRecursive(nextLine(line));
             }
         }
     }
