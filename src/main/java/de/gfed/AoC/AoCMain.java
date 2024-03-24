@@ -15,9 +15,9 @@ public class AoCMain {
         String cookie = "";
         try {
 
-            BufferedReader reader = new BufferedReader(new FileReader("cookie.txt"));
-            cookie = reader.readLine();
-            reader.close();
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("cookie.txt"));
+            cookie = bufferedReader.readLine();
+            bufferedReader.close();
         }
         catch (Exception e){
             System.out.println(e.getMessage());
@@ -25,7 +25,7 @@ public class AoCMain {
         inputConnector.setCookie("session=" + cookie);
 
         boolean isDebug = false;
-        boolean checkAll = true;
+        boolean checkAll = false;
 
         if ( checkAll ) {
             DayOne dayOne = new DayOne(isDebug, inputConnector);
@@ -54,5 +54,7 @@ public class AoCMain {
             dayTwelve.displayResults();
             System.out.println("Expectations are individual");
         }
+        DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
+        dayTwelve.displayResults();
     }
 }
