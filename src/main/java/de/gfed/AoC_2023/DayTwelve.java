@@ -1,4 +1,4 @@
-package de.gfed.AoC;
+package de.gfed.AoC_2023;
 
 import java.util.*;
 
