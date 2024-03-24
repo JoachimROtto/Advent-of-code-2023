@@ -5,7 +5,8 @@ import java.net.URI;
 import java.net.URLConnection;
 import java.util.List;
 import java.util.ArrayList;
-
+import java.nio.file.Paths;
+import java.nio.file.Files;
 
 public class AoCInputConnector {
     private final String urlPrefix = "https://adventofcode.com/2023/day/";
@@ -25,7 +26,7 @@ public class AoCInputConnector {
         List<String> result = new ArrayList<>();
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("input-Day" + day + ".txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("input/input-Day" + day + ".txt"));
             String line;
             while ((line = bufferedReader.readLine()) != null)
             {
@@ -48,7 +49,8 @@ public class AoCInputConnector {
             conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.0; pl; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2");
             conn.addRequestProperty("Cookie", cookie);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("input-Day" + day + ".txt"));
+            Files.createDirectories(Paths.get("input"));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("input/input-Day" + day + ".txt"));
             String line;
             while ((line = bufferedReader.readLine()) != null)
             {
