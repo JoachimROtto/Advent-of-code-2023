@@ -1,4 +1,4 @@
-package de.gfed.AoC;
+package de.gfed.AoC_2023;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,14 +37,14 @@ public class DayEleven {
         You have a map of galaxies
          -- see above --
         with space (.) and galaxies (#). As a first step the space expands (rows and columns with no galaxy
-        will be doubled. Above row 4 and 8 and column 3,6 and 9.
+        will be doubled). Above row 4 and 8 and column 3,6 and 9.
         Now find the shortest distance (rows + columns) between to galaxies and add them (each pair once).
          */
 
         System.out.println("Day 11 (Exp.: 374)" + computeDistances(processInput(input,1)));
 
         /*
-        The expansion of space has happend  1000000 times. So eaxch empty row or column insert
+        The expansion of space has happened  1000000 times. So each empty row or column insert
         1000000 empty rows or columns (=999999 more)
          */
 
@@ -55,12 +55,12 @@ public class DayEleven {
     private void displayResult() {
         inputConnector.setDay(11);
         List<String> input = inputConnector.getInput();
-        System.out.println("Day 11 (Exp.: 10292708)" + computeDistances(processInput(input,1)));
+        System.out.println("Day 11 (Exp.: 10292708):" + computeDistances(processInput(input,1)));
 
         System.out.println("Day 11 Part 2 (Exp.: 790194712336): "+ computeDistances(processInput(input,1000000-1)));
     }
     private int[][] processInput(List<String> input, int expansionGrade){
-        List<int[]> galaxies = new ArrayList<int[]>();
+        List<int[]> galaxies = new ArrayList<>();
         int[][] result;
         int offsetY=0;
         int step=0;

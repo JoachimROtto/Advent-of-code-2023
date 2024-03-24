@@ -1,11 +1,9 @@
-package de.gfed.AoC;
-
+package de.gfed.AoC_2023;
 
 import java.io.*;
 
 public class AoCMain {
     public static void main(String[] args) {
-        boolean isDebug = false;
         AoCInputConnector inputConnector = new AoCInputConnector();
 
         /*
@@ -17,15 +15,16 @@ public class AoCMain {
         String cookie = "";
         try {
 
-            BufferedReader reader = new BufferedReader(new FileReader("cookie.txt"));
-            cookie = reader.readLine();
-            reader.close();
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("cookie.txt"));
+            cookie = bufferedReader.readLine();
+            bufferedReader.close();
         }
         catch (Exception e){
             System.out.println(e.getMessage());
         }
         inputConnector.setCookie("session=" + cookie);
 
+        boolean isDebug = false;
         boolean checkAll = false;
 
         if ( checkAll ) {
@@ -53,7 +52,9 @@ public class AoCMain {
             dayEleven.displayResults();
             DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
             dayTwelve.displayResults();
-            System.out.println("Expections are personalized");
+            System.out.println("Expectations are individual");
         }
+        DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
+        dayTwelve.displayResults();
     }
 }

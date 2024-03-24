@@ -1,4 +1,4 @@
-package de.gfed.AoC;
+package de.gfed.AoC_2023;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -78,7 +78,7 @@ public class DayThree {
     }
 
     private  List<Integer[]> buildListOfNumbers(List<String> input) {
-        List<Integer[]> result = new ArrayList<Integer[]>();
+        List<Integer[]> result = new ArrayList<>();
         Pattern digitRegex = Pattern.compile("\\d+");
         String line;
         for (int i = 0; i < input.size(); i++) {
@@ -94,7 +94,7 @@ public class DayThree {
     }
 
     private  List<Integer[]> buildListOfSymbols(List<String> input, String regEx) {
-        List<Integer[]> result = new ArrayList<Integer[]>();
+        List<Integer[]> result = new ArrayList<>();
         Pattern digitRegex = Pattern.compile(regEx);
         String line;
         for (int i = 0; i < input.size(); i++) {

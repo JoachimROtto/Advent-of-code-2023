@@ -1,8 +1,6 @@
-package de.gfed.AoC;
+package de.gfed.AoC_2023;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DayFive {
     boolean debugMode;
@@ -11,7 +9,7 @@ public class DayFive {
     Map<String, long[]> maps = new HashMap<>();
     Map<String, String> transitions = new HashMap<>();
     long[] seeds;
-    List<Long[]> seedsList = new ArrayList<Long[]>();
+    List<Long[]> seedsList = new ArrayList<>();
 
     DayFive(boolean debugMode, AoCInputConnector inputConnector){
         this.debugMode=debugMode;
@@ -110,14 +108,14 @@ public class DayFive {
         }
 
         for (int i=1; i<input.size(); i++){
-            // Tablesection begins and is noted in transitions
+            // Table section begins and is noted in transitions
             if (!Objects.equals(input.get(i), "")){
                 if(input.get(i).substring(0,1).matches("[a-z]")) {
                 source = input.get(i).split("-to-")[0];
                 transitions.put(source, input.get(i).split("-to-")[1]
                         .replace(" map:", ""));
             }
-            // Tablesection is processed
+            // Table section is processed
             else if (!Objects.equals(input.get(i), "") & input.get(i).substring(0,1).matches("\\d")) {
                 if (maps.get(source)!=null){
                     long [] map = new long[maps.get(source).length+3];
@@ -164,12 +162,10 @@ public class DayFive {
         // input
         List<Long[]> stateList = seedsList;
         // (no) matches per atomic round
-        List<Long[]> ignoredList = new ArrayList<Long[]>();
-        List<Long[]> transitionList = new ArrayList<Long[]>();
+        List<Long[]> ignoredList = new ArrayList<>();
+        List<Long[]> transitionList = new ArrayList<>();
         long[] map;
         Long[] state;
-        long pos;
-        long range;
         long result = Long.MAX_VALUE;
         target = "seed";
         // for all kind of transitions

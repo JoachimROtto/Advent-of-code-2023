@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="Day 11 solved">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayTwelve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/DayTwelve2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5fb65418-ab9b-47ee-b0dd-9f3c11ef206f" name="Changes" comment="Input-Directory changed">
+      <change afterPath="$PROJECT_DIR$/input/input-Day12.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gfed/AoC/AoCMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,17 +23,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DayEleven" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "JoachimROtto"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JoachimROtto&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
@@ -76,7 +73,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "DayTwelve",
+    "git-widget-placeholder": "Optimizing-intermediate-step",
     "last_directory_selection": "/Users/joe/Desktop/AoC/AdventOfCode/src/main/java/de/gfed",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -89,10 +86,10 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.de.gfed.AoC.AoCMain">
+  <component name="RunManager" selected="Application.de.gfed.AoC_2023.AoCMain">
     <configuration name="AoCMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.gfed.AoCMain" />
-      <module name="AdventOfCode" />
+      <module name="AdventOfCode-2023" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.gfed.*" />
@@ -103,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="de.gfed.AoC.AoCMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="de.gfed.AoC.AoCMain" />
-      <module name="AdventOfCode" />
+    <configuration name="de.gfed.AoC_2023.AoCMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.gfed.AoC_2023.AoCMain" />
+      <module name="AdventOfCode-2023" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.gfed.AoC.*" />
+          <option name="PATTERN" value="de.gfed.AoC_2023.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,13 +113,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="AdventOfCode-2023" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="AdventOfCode-2023" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.de.gfed.AoC.AoCMain" />
+        <item itemvalue="Application.de.gfed.AoC_2023.AoCMain" />
         <item itemvalue="Application.AoCMain" />
-        <item itemvalue="Application.de.gfed.AoC.AoCMain" />
+        <item itemvalue="Application.de.gfed.AoC_2023.AoCMain" />
         <item itemvalue="Application.AoCMain" />
-        <item itemvalue="Application.de.gfed.AoC.AoCMain" />
+        <item itemvalue="Application.de.gfed.AoC_2023.AoCMain" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +206,39 @@
       <option name="project" value="LOCAL" />
       <updated>1705347251344</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="typos and warnings">
+      <option name="closed" value="true" />
+      <created>1711313219710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711313219710</updated>
+    </task>
+    <task id="LOCAL-00009" summary="typos and warnings part 2">
+      <option name="closed" value="true" />
+      <created>1711314108073</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711314108073</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Caching input added">
+      <option name="closed" value="true" />
+      <created>1711315265630</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711315265630</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Input-Directory changed">
+      <option name="closed" value="true" />
+      <created>1711315753943</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711315753943</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +264,11 @@
     <MESSAGE value="DayTen part 2 solved" />
     <MESSAGE value="minor changes" />
     <MESSAGE value="Day 11 solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 11 solved" />
+    <MESSAGE value="typos and warnings" />
+    <MESSAGE value="typos and warnings part 2" />
+    <MESSAGE value="Caching input added" />
+    <MESSAGE value="Input-Directory changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Input-Directory changed" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

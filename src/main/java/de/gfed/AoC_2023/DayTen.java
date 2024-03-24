@@ -1,4 +1,4 @@
-package de.gfed.AoC;
+package de.gfed.AoC_2023;
 
 import java.util.*;
 
@@ -45,7 +45,7 @@ public class DayTen {
         is 6
          */
 
-        System.out.println("Day 10 Part 2: " + searchLoop(input));
+        System.out.println("Day 10: " + searchLoop(input));
 
         /*
         There is a nest inside the loop. Size (count '.')?
@@ -122,7 +122,7 @@ public class DayTen {
 
     private int followThePipe ( int[] pos, List<String> input){
         int result=1;
-        List<int[]> loop = new ArrayList<int[]>();
+        List<int[]> loop = new ArrayList<>();
         loop.add(new int[]{pos[0], pos[1]});
         do {
             pos=getNextPipeAndQuadrantIn(pos, input.get(pos[0]).charAt(pos[1]), pos[2]);
