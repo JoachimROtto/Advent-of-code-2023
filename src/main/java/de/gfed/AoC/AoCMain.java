@@ -51,5 +51,7 @@ public class AoCMain {
         }
         DayEleven dayEleven= new DayEleven(isDebug, inputConnector);
         dayEleven.displayResults();
+        DayTen dayTen= new DayTen(isDebug, inputConnector);
+        dayTen.displayResults();
     }
 }
