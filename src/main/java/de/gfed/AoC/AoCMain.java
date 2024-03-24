@@ -20,7 +20,8 @@ public class AoCMain {
             BufferedReader reader = new BufferedReader(new FileReader("cookie.txt"));
             cookie = reader.readLine();
             reader.close();
-        } catch (Exception e) {
+        }
+        catch (Exception e){
             System.out.println(e.getMessage());
         }
         inputConnector.setCookie("session=" + cookie);
@@ -44,10 +45,15 @@ public class AoCMain {
             daySeven.displayResults();
             DayEight dayEight = new DayEight(isDebug, inputConnector);
             dayEight.displayResults();
+            DayNine dayNine= new DayNine(isDebug, inputConnector);
+            dayNine.displayResults();
+            DayTen dayTen= new DayTen(isDebug, inputConnector);
+            dayTen.displayResults();
+            DayEleven dayEleven= new DayEleven(isDebug, inputConnector);
+            dayEleven.displayResults();
             System.out.println("Expections are personalized");
         }
         DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
         dayTwelve.displayResults();
     }
 }
-
