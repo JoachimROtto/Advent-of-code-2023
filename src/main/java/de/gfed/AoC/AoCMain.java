@@ -51,9 +51,9 @@ public class AoCMain {
             dayTen.displayResults();
             DayEleven dayEleven= new DayEleven(isDebug, inputConnector);
             dayEleven.displayResults();
+            DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
+            dayTwelve.displayResults();
             System.out.println("Expections are personalized");
         }
-        DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
-        dayTwelve.displayResults();
     }
 }
