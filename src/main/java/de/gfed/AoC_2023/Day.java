@@ -8,7 +8,6 @@ public abstract class Day {
     private int day;
     List<String> input;
     List<String> example;
-
     long[] expectations =new long[]{0,0};
 
     Day(boolean debugMode, AoCInputConnector inputConnector,int day){
@@ -29,12 +28,12 @@ public abstract class Day {
         }
     }
 
-    public void displayResultDeb(){
+    private void displayResultDeb(){
         System.out.println("Day "+ day + ": " + evalInput(false));
         System.out.println("Day "+ day + " Part 2: " + evalInput(true));
     }
 
-    public void displayResult(){
+    private void displayResult(){
         long result = evalInput(false);
         System.out.println("Day "+ day + " (Exp.:" + expectations[0] + "): " + result + " ->" + (result==expectations[0]));
         result = evalInput(true);

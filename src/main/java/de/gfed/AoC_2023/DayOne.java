@@ -8,8 +8,8 @@ import java.util.regex.Pattern;
 
 public class DayOne extends Day{
 
-    DayOne(boolean debugMode, AoCInputConnector inputConnector, int day) {
-        super(debugMode, inputConnector, day);
+    DayOne(boolean debugMode, AoCInputConnector inputConnector) {
+        super(debugMode, inputConnector, 1);
         expectations=new long[]{54081,54649};
         example = Arrays.asList(
                 "2xjzgsjzfhzhm1",

@@ -2,26 +2,14 @@ package de.gfed.AoC_2023;
 
 import java.util.*;
 
-public class DaySeven {
-    boolean debugMode;
-    AoCInputConnector inputConnector;
+public class DaySeven extends Day{
 
     String cardStrength = "23456789TJQKA";
 
     DaySeven(boolean debugMode, AoCInputConnector inputConnector) {
-        this.debugMode = debugMode;
-        this.inputConnector = inputConnector;
-    }
-
-    public void displayResults() {
-        if (debugMode)
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-    public void displayResultDeb() {
-        List<String> input = Arrays.asList(
+        super(debugMode, inputConnector, 7);
+        expectations=new long[]{250946742,251824095};
+        example =  Arrays.asList(
                 "32T3K 765",
                 "T55J5 684",
                 "KK677 28",
@@ -38,32 +26,16 @@ public class DaySeven {
         three of a kind, full house, four, five of a kind) and the first cards (A, K, Q, J, T, 9,...2).
         KK677 is stronger than KTJJT. The hands are ranked by strength and the result is the sum
          of ranks multiplied by bid. (->765 * 1 + 220 * 2 + 28 * 3 + 684 * 4 + 483 * 5=6440)
+
+         Part 2:
+         Oops! Js are jockers und are used the best way. KTJJT is now four of a kind.
          */
 
-        //6440
-        System.out.println("Day 7: " + processInput(input, false));
-
-        // Oops! Js are jockers und are used the best way. KTJJT is now four of a kind.
-
-        //5905
-        System.out.println("Day 7: Part 2" + processInput(input, false));
-
     }
 
-    public void displayResult() {
-        inputConnector.setDay(7);
-        List<String> input = inputConnector.getInput();
-
-
-        //Sol.  250946742
-        System.out.println("Day 7 (Exp.:250946742): " + processInput(input, false));
-
-
-        //Sol. 251824095
-        System.out.println("Day 7 Part 2 (Exp.:251824095):" + processInput(input, true));
-
+    protected long evalInput(boolean bPart2) {
+        return processInput(input, bPart2);
     }
-
 
     private long processInput(List <String> input, boolean bPart2){
         long result=0;

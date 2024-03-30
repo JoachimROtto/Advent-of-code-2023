@@ -2,61 +2,48 @@ package de.gfed.AoC_2023;
 
 import java.util.*;
 
-public class DayFive {
-    boolean debugMode;
-    AoCInputConnector inputConnector;
-
+public class DayFive extends Day {
     Map<String, long[]> maps = new HashMap<>();
     Map<String, String> transitions = new HashMap<>();
     long[] seeds;
     List<Long[]> seedsList = new ArrayList<>();
 
-    DayFive(boolean debugMode, AoCInputConnector inputConnector){
-        this.debugMode=debugMode;
-        this.inputConnector=inputConnector;
-    }
-
-    public void displayResults(){
-        if (debugMode)
-            displayResultDeb();
-        else
-            displayResult();
-    }
-    public void displayResultDeb(){
-        List<String> input = Arrays.asList(
-                //"seeds: 79 14 55 13",
+    DayFive(boolean debugMode, AoCInputConnector inputConnector) {
+        super(debugMode, inputConnector, 5);
+        expectations=new long[]{313045984,20283860};
+        example =  Arrays.asList(
                 "seeds: 79 14 55 13",
-        "seed-to-soil map:",
-        "50 98 2",
-        "52 50 48",
+                "seed-to-soil map:",
+                "50 98 2",
+                "52 50 48",
 
-        "soil-to-fertilizer map:",
-        "0 15 37",
-        "37 52 2",
-        "39 0 15",
+                "soil-to-fertilizer map:",
+                "0 15 37",
+                "37 52 2",
+                "39 0 15",
 
-        "fertilizer-to-water map:",
-        "49 53 8",
-        "0 11 42",
-        "42 0 7",
-        "57 7 4",
+                "fertilizer-to-water map:",
+                "49 53 8",
+                "0 11 42",
+                "42 0 7",
+                "57 7 4",
 
-        "water-to-light map:",
-        "88 18 7",
-        "18 25 70",
+                "water-to-light map:",
+                "88 18 7",
+                "18 25 70",
 
-        "light-to-temperature map:",
-        "45 77 23",
-        "81 45 19",
-        "68 64 13",
+                "light-to-temperature map:",
+                "45 77 23",
+                "81 45 19",
+                "68 64 13",
 
-        "temperature-to-humidity map:",
-        "0 69 1",
-        "1 0 69",
+                "temperature-to-humidity map:",
+                "0 69 1",
+                "1 0 69",
 
-        "humidity-to-location map:",
-        "60 56 37" ,
-        "56 93 4");
+                "humidity-to-location map:",
+                "60 56 37" ,
+                "56 93 4");
 
         /*
             An Almanac contains several mappings that build together a trail. Seeds (the initial
@@ -66,37 +53,23 @@ public class DayFive {
             50 98 2
             52 50 48"+
             ->two numbers starting with 98 are mapped to two to numbers starting with 50,
-            48 numbers starting with 50 are mapped to 48 to numbers starting with 52
+            48 numbers, starting with 50, are mapped to 48 numbers, starting with 52
             Others leave unchanged
-            => First step: 79->81; 14->14; 55->57 ;13->13
+            => First step: 79 (is in 50..98) ->81 (52-50=2); 14->14; 55->57 ;13->13
 
             4 Seeds lead to 4 locations, which is the lowest?
+
+            Part 2:
+            Seeds consists of a pair (start and range): 79 14 is 79, 80, ... 79+14
          */
-
-        processInput(input);
-
-        //35
-        System.out.println("Day 5: " + Arrays.stream(processTransitions()).min());
-
-        // Seeds consists of a pair, start and range: 79 14 is 79, 80, ... 79+14
-        // Sol. for Ex. 46
-
-        System.out.println("Day 5 Part 2: " + processTransitionsPart2());
-        // Step X: 79, 14 .. -> 79 1 14 1 ... und dann mit Part2 prozessieren
 
     }
 
-    public void displayResult(){
-        inputConnector.setDay(5);
-        List<String> input = inputConnector.getInput();
-
+    protected long evalInput(boolean bPart2) {
         processInput(input);
-
-        //Sol. 313045984
-        System.out.println("Day 5 (Exp.:313045984): " + Arrays.stream(processTransitions()).min());
-        //Sol. 20283860
-        System.out.println("Day 5 Part 2 (Exp.:20283860): " + processTransitionsPart2());
-
+        if (!bPart2)
+            return Arrays.stream(processTransitions()).min().orElse(0);
+        return processTransitionsPart2();
     }
 
     private void processInput(List<String> input ){
