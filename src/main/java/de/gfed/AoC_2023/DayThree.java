@@ -6,29 +6,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class DayThree {
-    boolean debugMode;
-    AoCInputConnector inputConnector;
+public class DayThree extends Day{
 
-    DayThree(boolean debugMode, AoCInputConnector inputConnector){
-        this.debugMode=debugMode;
-        this.inputConnector=inputConnector;
-    }
-
-    public void displayResults(){
-        if (debugMode)
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-
-    public void displayResultDeb(){
-        List<String> input = Arrays.asList(
+    DayThree(boolean debugMode, AoCInputConnector inputConnector) {
+        super(debugMode, inputConnector, 3);
+        expectations=new long[]{540131,86879020};
+        example = Arrays.asList(
                 "........*.=..............588.....*786......$.........*........*.......390*.....886...*....227...728..852.......606....*863.......916..396...",
                 ".....538...287................301........133.....539..........33.537......466..$...793....*........*...............218.....721........*.....",
                 "...............986.$.......=.......................................*...%...............222..-.......701.271...............#.........437.....");
-
 
         /*
          A visual representation of some engine consists of lots of numbers and symbols.
@@ -41,40 +27,26 @@ public class DayThree {
 
          leads to 858 + 801 + 487 + 140 + 222
          */
-        List<Integer[]> listOfNumbers = buildListOfNumbers(input);
-        List<Integer[]> listOfSymbols = buildListOfSymbols(input, "[^.0-9]");
 
-        System.out.println("Day 3: " + sumPartNumbers(listOfNumbers, listOfSymbols));
 
-        List<Integer[]> listOfAsterisks = buildListOfSymbols(input, "[*]");
-
-        System.out.println("Day 3 Part 2: " + sumGearRatio(listOfNumbers, listOfAsterisks));
+        /*  Part 2:
+            And a "gear" consists of two numbers sharing the same asterisk with their product
+            as gear-ratio. Add them up!
+            Ex. above leads to 487 * 222 + 858 * 140
+         */
 
     }
 
-    public void displayResult(){
-        inputConnector.setDay(3);
-        List<String> input = inputConnector.getInput();
-
+    protected long evalInput(boolean bPart2) {
         //List: number, row, col
         List<Integer[]> listOfNumbers = buildListOfNumbers(input);
         //List symbol: row, col
         List<Integer[]> listOfSymbols = buildListOfSymbols(input, "[^.0-9]");
 
-        //Sol. 540131
-        System.out.println("Day 3 (Exp.:540131): "+ sumPartNumbers(listOfNumbers, listOfSymbols));
-
-        /*
-            And a "gear" consists of two numbers sharing the same asterisk with their product
-            as gear-ratio. Add them up!
-            Ex. above leads to 487 * 222 + 858 * 140
-         */
-        //List asterisks: row, col
+        if (!bPart2)
+            return sumPartNumbers(listOfNumbers, listOfSymbols);
         List<Integer[]> listOfAsterisks = buildListOfSymbols(input, "[*]");
-
-        //Sol. 86879020
-        System.out.println("Day 3 Part 2 (Exp.:86879020): " + sumGearRatio(listOfNumbers, listOfAsterisks));
-
+        return sumGearRatio(listOfNumbers, listOfAsterisks).get();
     }
 
     private  List<Integer[]> buildListOfNumbers(List<String> input) {

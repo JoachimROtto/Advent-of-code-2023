@@ -6,55 +6,28 @@ public class AoCMain {
     public static void main(String[] args) {
         AoCInputConnector inputConnector = new AoCInputConnector();
 
-        /*
-        Paste your session cookie
-        (Browser ->Log into www.adventofcode.com ->F12 ->App ->
-        Cookies (on the left) ->adventofcode.com ->session
-        in <Projectdirectory>cookie.txt
-         */
-        String cookie = "";
-        try {
-
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("cookie.txt"));
-            cookie = bufferedReader.readLine();
-            bufferedReader.close();
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-        inputConnector.setCookie("session=" + cookie);
-
         boolean isDebug = false;
-        boolean checkAll = false;
+        boolean checkAll = true;
 
-        if ( checkAll ) {
-            DayOne dayOne = new DayOne(isDebug, inputConnector);
-            dayOne.displayResults();
-            DayTwo dayTwo = new DayTwo(isDebug, inputConnector);
-            dayTwo.displayResults();
-            DayThree dayThree = new DayThree(isDebug, inputConnector);
-            dayThree.displayResults();
-            DayFour dayFour = new DayFour(isDebug, inputConnector);
-            dayFour.displayResults();
-            DayFive dayFive = new DayFive(isDebug, inputConnector);
-            dayFive.displayResults();
-            DaySix daySix = new DaySix(isDebug, inputConnector);
-            daySix.displayResults();
-            DaySeven daySeven = new DaySeven(isDebug, inputConnector);
-            daySeven.displayResults();
-            DayEight dayEight = new DayEight(isDebug, inputConnector);
-            dayEight.displayResults();
-            DayNine dayNine= new DayNine(isDebug, inputConnector);
-            dayNine.displayResults();
-            DayTen dayTen= new DayTen(isDebug, inputConnector);
-            dayTen.displayResults();
-            DayEleven dayEleven= new DayEleven(isDebug, inputConnector);
-            dayEleven.displayResults();
-            DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
-            dayTwelve.displayResults();
-            System.out.println("Expectations are individual");
+        Day[] days = new Day[]{
+                new DayOne(isDebug, inputConnector),
+                new DayTwo(isDebug, inputConnector),
+                new DayThree(isDebug, inputConnector),
+                new DayFour(isDebug, inputConnector),
+                new DayFive(isDebug, inputConnector),
+                new DaySix(isDebug, inputConnector),
+                new DaySeven(isDebug, inputConnector),
+                new DayEight(isDebug, inputConnector),
+                new DayNine(isDebug, inputConnector),
+                new DayTen(isDebug, inputConnector),
+                new DayEleven(isDebug, inputConnector),
+                new DayTwelve(isDebug, inputConnector),
+                new DayThirteen(isDebug, inputConnector)
+        };
+        for (int i =(checkAll?0:days.length-1); i<days.length; i++){
+            days[i].displayResults();
         }
-        DayThirteen dayThirteen = new DayThirteen(isDebug, inputConnector);
-        dayThirteen.displayResults();
+        System.out.println("Expectations are individual");
+
     }
 }

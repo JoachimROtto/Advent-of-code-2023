@@ -14,32 +14,54 @@ public class AoCInputConnector {
     private String cookie;
     private int day;
     AoCInputConnector(){
+        setCookie();
     }
 
     public void setDay(int day){
         this.day=day;
     }
-    public void setCookie(String cookie){
-        this.cookie=cookie;
-    }
-    public List<String>  getInput() {
-        List<String> result = new ArrayList<>();
+    private void setCookie(){
+        /*
+        Paste your session cookie
 
+        Browser ->Log into www.adventofcode.com ->F12 ->App ->
+        Cookies (on the left) ->adventofcode.com ->session
+
+        in <Projectdirectory>cookie.txt or below
+         */
+        cookie = "";
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("input/input-Day" + day + ".txt"));
-            String line;
-            while ((line = bufferedReader.readLine()) != null)
-            {
-                result.add(line);
-            }
-            return result;
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("cookie.txt"));
+            cookie = bufferedReader.readLine();
+            bufferedReader.close();
         }
         catch (Exception e){
             System.out.println(e.getMessage());
-            return fetchContentFromURL();
+        }
+        cookie = "session=" + cookie;
+    }
+
+    public List<String>  getInput() {
+        try {
+            return fetchContentFromFile();
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return fetchAndCacheContentFromURL();
         }
     }
-    private  List<String> fetchContentFromURL() {
+
+    private  List<String> fetchContentFromFile() throws IOException {
+        List<String> result = new ArrayList<>();
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("input/input-Day" + day + ".txt"));
+        String line;
+        while ((line = bufferedReader.readLine()) != null)
+        {
+            result.add(line);
+        }
+        return result;
+    }
+    private  List<String> fetchAndCacheContentFromURL() {
         String URL = urlPrefix + day + urlPostfix;
         List<String> result = new ArrayList<>();
 

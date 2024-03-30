@@ -3,27 +3,14 @@ package de.gfed.AoC_2023;
 import java.util.*;
 
 
-public class DayTen {
-    boolean debugMode;
-    AoCInputConnector inputConnector;
+public class DayTen extends Day {
     int quadrantWinningLoop;
     List<List<int[]>> loops = new ArrayList<List<int[]>>();
 
     DayTen(boolean debugMode, AoCInputConnector inputConnector) {
-        this.debugMode = debugMode;
-        this.inputConnector = inputConnector;
-    }
-
-    public void displayResults() {
-        if ( debugMode )
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-
-    public void displayResultDeb() {
-        List<String> input = Arrays.asList(
+        super(debugMode, inputConnector, 10);
+        expectations=new long[]{7093,407};
+        example = Arrays.asList(
                 "..F7." ,
                 ".FJ|.",
                 "SJ.L7",
@@ -43,29 +30,19 @@ public class DayTen {
         .L-J.
         .....
         is 6
-         */
 
-        System.out.println("Day 10: " + searchLoop(input));
-
-        /*
+        Part 2:
         There is a nest inside the loop. Size (count '.')?
         (Really inside the loop, no space between pipes is not enough)
          */
 
-        System.out.println("Day 10 Part 2: " + sizeNest(loops.get(quadrantWinningLoop)));
-
-
     }
 
-    public void displayResult() {
-        inputConnector.setDay(10);
-        List<String> input = inputConnector.getInput();
+    protected long evalInput(boolean bPart2) {
         input = new ArrayList<>(input);
-
-        System.out.println("Day 10 (Exp. 7093): " + searchLoop(input));
-
-        System.out.println("Day 10 Part 2 (Exp. 407): " + sizeNest(loops.get(quadrantWinningLoop)));
-
+        if (!bPart2)
+            return searchLoop(input);
+        return sizeNest(loops.get(quadrantWinningLoop));
     }
 
     private int sizeNest(List<int[]> input){

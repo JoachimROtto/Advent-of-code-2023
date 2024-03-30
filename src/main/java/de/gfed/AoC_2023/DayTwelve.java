@@ -2,27 +2,14 @@ package de.gfed.AoC_2023;
 
 import java.util.*;
 
-public class DayTwelve {
-    boolean debugMode;
+public class DayTwelve extends Day{
+
     Map<String, Long> done;
 
-    AoCInputConnector inputConnector;
-
     DayTwelve(boolean debugMode, AoCInputConnector inputConnector) {
-        this.debugMode = debugMode;
-        this.inputConnector = inputConnector;
-    }
-
-    public void displayResults() {
-        if ( debugMode )
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-
-    public void displayResultDeb() {
-        List<String> input = Arrays.asList(
+        super(debugMode, inputConnector, 12);
+        expectations=new long[]{6852,8475948826693L};
+        example = Arrays.asList(
                 "???.### 1,1,3",
                 ".??..??...?##. 1,1,3",
                 "?#?#?#?#?#?#?#? 1,3,1,6",
@@ -31,34 +18,26 @@ public class DayTwelve {
                 "?###???????? 3,2,1");
 
         /*
-        ?##??????#? 3,2,2
-        ?## ? ?? ? ?? #?
-        ?## ? ? ?? ?? #?
-        ?## ? ?? ?? ? #?
-        ? ##? ? ? ?? ? #?
-        ? ##? ? ?? ?? #?
         ....
         You are given a record of working(#), not working(.) and unknown(?) springs. Each row ends with
         ordered number of working springs (1,1,3: there is one spring and another spring and 3 springs, each working
         and groupwise separated by non-working springs).
         How many different arrangements would fit the setting of a row? Sum the counts.
         Ex.: 1+4+1+1+4+10=21
+
+        Part 2:
+        The rows are folded (5 times). Unfold with a ? as delimiter and recalculate.
+        (??.## 1,2 -> ??.##???.##???.##???.##???.## 1,2,1,2,1,2,1,2,1,2)
          */
 
-        System.out.println("Day 12 (Exp. 21): " + input.stream().mapToLong(this::evalRow).sum());
-        input = unfoldForPartTwo(input);
-        System.out.println("Day 12 Part 2 (Exp. 525152): " + input.stream().mapToLong(this::evalRow).sum());
     }
 
-    public void displayResult() {
-        inputConnector.setDay(12);
-        List<String> input = inputConnector.getInput();
-
-        System.out.println("Day 12 (Exp. 6852): " + input.stream().mapToLong(this::evalRow).sum());
+    protected long evalInput(boolean bPart2) {
+        if (!bPart2)
+            return input.stream().mapToLong(this::evalRow).sum();
 
         input = unfoldForPartTwo(input);
-        System.out.println("Day 12 Part 2 (Exp. 8475948826693): " + input.stream().mapToLong(this::evalRow).sum());
-
+        return input.stream().mapToLong(this::evalRow).sum();
     }
 
     private long evalRow(String line){

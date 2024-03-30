@@ -3,26 +3,13 @@ package de.gfed.AoC_2023;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
-public class DayEleven {
-
-    boolean debugMode;
-    AoCInputConnector inputConnector;
-
+public class DayEleven extends Day{
     DayEleven(boolean debugMode, AoCInputConnector inputConnector) {
-        this.debugMode = debugMode;
-        this.inputConnector = inputConnector;
-    }
-
-    public void displayResults() {
-        if ( debugMode )
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-    private void displayResultDeb() {
-        List<String> input = Arrays.asList(
+        super(debugMode, inputConnector, 11);
+        expectations=new long[]{10292708,790194712336L};
+        example = Arrays.asList(
                 "...#......",
                 ".......#..",
                 "#.........",
@@ -39,26 +26,19 @@ public class DayEleven {
         with space (.) and galaxies (#). As a first step the space expands (rows and columns with no galaxy
         will be doubled). Above row 4 and 8 and column 3,6 and 9.
         Now find the shortest distance (rows + columns) between to galaxies and add them (each pair once).
-         */
 
-        System.out.println("Day 11 (Exp.: 374)" + computeDistances(processInput(input,1)));
-
-        /*
+        Part 2:
         The expansion of space has happened  1000000 times. So each empty row or column insert
         1000000 empty rows or columns (=999999 more)
          */
-
-        System.out.println("Day 11 Part 2 (Exp.: 8410): "+ computeDistances(processInput(input,10-1)));
-
     }
 
-    private void displayResult() {
-        inputConnector.setDay(11);
-        List<String> input = inputConnector.getInput();
-        System.out.println("Day 11 (Exp.: 10292708):" + computeDistances(processInput(input,1)));
-
-        System.out.println("Day 11 Part 2 (Exp.: 790194712336): "+ computeDistances(processInput(input,1000000-1)));
+    protected long evalInput(boolean bPart2) {
+        if (!bPart2)
+            return computeDistances(processInput(input,1));
+        return computeDistances(processInput(input,1000000-1));
     }
+
     private int[][] processInput(List<String> input, int expansionGrade){
         List<int[]> galaxies = new ArrayList<>();
         int[][] result;

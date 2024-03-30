@@ -4,27 +4,14 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class DayNine {
-    boolean debugMode;
-    AoCInputConnector inputConnector;
+public class DayNine extends Day{
     boolean isPart2=false;
 
 
     DayNine(boolean debugMode, AoCInputConnector inputConnector) {
-        this.debugMode = debugMode;
-        this.inputConnector = inputConnector;
-    }
-
-    public void displayResults() {
-        if ( debugMode )
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-
-    public void displayResultDeb() {
-        List<String> input = Arrays.asList(
+        super(debugMode, inputConnector, 9);
+        expectations=new long[]{1637452029,908};
+        example = Arrays.asList(
                 "0 3 6 9 12 15",
                 "1 3 6 10 15 21",
                 "10 13 16 21 30 45");
@@ -42,12 +29,8 @@ public class DayNine {
                 0  0  0 =>2; =>8 =>23 =>68
          Make a sum of the predictions!
         Example: 18+28+68=114
-         */
 
-
-        System.out.println("Day 9: " + input.stream().mapToLong(this::predictNext).sum());
-
-        /*
+        Part 2:
         And now backwards: Add a 0 add the beginning and extrapolate (first of line - new first
         of next line)
         10 13 16 21 30 45
@@ -57,26 +40,13 @@ public class DayNine {
                 0  0  =>0 ; =>2 =>-2 =>5 =>5
           Again: sum
           Ex. -3
-         */
-        isPart2=true;
-        System.out.println("Day 9 Part 2: " + input.stream().mapToLong(this::predictNext).sum());
-
-
+          */
     }
 
-    public void displayResult() {
-        inputConnector.setDay(9);
-        List<String> input = inputConnector.getInput();
-        input = new ArrayList<>(input);
-
-        // Sol. 1637452029
-       System.out.println("Day 9 (Exp. 1637452029): " + input.stream().mapToLong(this::predictNext).sum());
-        isPart2=true;
-        //Sol. 908
-        System.out.println("Day 9 Part 2 (Exp. 908): " + input.stream().mapToLong(this::predictNext).sum());
-
+    protected long evalInput(boolean bPart2) {
+        isPart2=bPart2;
+        return input.stream().mapToLong(this::predictNext).sum();
     }
-
 
     private long predictNext(String line){
         return predictNextRecursive(string2LongList(line));
@@ -101,10 +71,8 @@ public class DayNine {
         }
         return result;
     }
-
-    private List<Long> string2LongList(String line){
+    protected List<Long> string2LongList(String line){
         return Arrays.stream(line.split(" "))
                 .map(Long::parseLong).collect(Collectors.toList());
     }
-
 }

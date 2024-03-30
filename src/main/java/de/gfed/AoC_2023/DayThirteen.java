@@ -4,25 +4,12 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class DayThirteen {
-    boolean debugMode;
-
-    AoCInputConnector inputConnector;
+public class DayThirteen extends Day{
 
     DayThirteen(boolean debugMode, AoCInputConnector inputConnector) {
-        this.debugMode = debugMode;
-        this.inputConnector = inputConnector;
-    }
-
-    public void displayResults() {
-        if ( debugMode )
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-    public void displayResultDeb() {
-        List<String> input = Arrays.asList(
+        super(debugMode, inputConnector, 13);
+        expectations=new long[]{27202,41566};
+        example = Arrays.asList(
                 "..##..##.",
                 "..#.##.#.",
                 "##......#",
@@ -38,24 +25,16 @@ public class DayThirteen {
         axes reflect to at least one end, not every block has such axes.
         Add all smaller Column number of the vertical axis with 100 times all smaller row number of
         the horizontal one (Ex.: 5 + 100 * 3=305).
-         */
-        System.out.println("Day 13 (Exp. 305): " + evalInput(input,false));
-        /*
+
+        Part 2:
         Surprise: Each Mirror has exactly one smudge that flips one position from . to # and vice versa.
         This correction may extend a reflection at the open end, build or change the reflection. Find it,
         correct it and calculate your solution again.
          */
-        System.out.println("Day 13 Part 2: " + evalInput(input, true));
     }
 
-    public void displayResult() {
-        inputConnector.setDay(13);
-        List<String> input = inputConnector.getInput();
-
-        System.out.println("Day 13 (Exp. 27202): " + evalInput(input,false));
-
-        System.out.println("Day 13 Part 2 (Exp. 41566): " + evalInput(input, true));
-
+    protected long evalInput(boolean bPart2) {
+        return evalInput(input,bPart2);
     }
 
     private int evalInput(List<String> input, boolean bPart2){
