@@ -54,7 +54,7 @@ public class AoCMain {
             dayTwelve.displayResults();
             System.out.println("Expectations are individual");
         }
-        DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
-        dayTwelve.displayResults();
+        DayThirteen dayThirteen = new DayThirteen(isDebug, inputConnector);
+        dayThirteen.displayResults();
     }
 }
