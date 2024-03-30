@@ -2,54 +2,33 @@ package de.gfed.AoC_2023;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DayOne {
-    boolean debugMode;
-    AoCInputConnector inputConnector;
+public class DayOne extends Day{
 
-    DayOne(boolean debugMode, AoCInputConnector inputConnector){
-        this.debugMode=debugMode;
-        this.inputConnector=inputConnector;
-    }
-
-    public void displayResults(){
-        if (debugMode)
-            displayResultDeb();
-        else
-            displayResult();
-    }
-
-
-    public void displayResultDeb(){
-        List<String> input = Arrays.asList(
+    DayOne(boolean debugMode, AoCInputConnector inputConnector, int day) {
+        super(debugMode, inputConnector, day);
+        expectations=new long[]{54081,54649};
+        example = Arrays.asList(
                 "2xjzgsjzfhzhm1",
                 "qhklfjd39rpjxhqtftwopfvrrj2eight",
                 "95btwo");
-        System.out.println("Day 1: " + input.stream().mapToInt(this::digitsInLine).sum());
-
-        input.replaceAll(this::replaceWords);
-        System.out.println("Day 1 Part 2: " + input.stream().mapToInt(this::digitsInLine).sum());
-    }
-
-    public void displayResult(){
-        inputConnector.setDay(1);
-        List<String> input=inputConnector.getInput();
 
         //Concat the first and last digits of a line and add them together across multiple lines
-        //Sol: 54081
-        System.out.println("Day 1 (Exp.:54081): " + input.stream().mapToInt(this::digitsInLine).sum());
+        //Part 2: Ooops "eight etc.",... is also a number!
 
-        //Part 2: Ooops "eight",... is also a digit!
-        //Sol: 54649
-        input.replaceAll(this::replaceWords);
-        System.out.println("Day 1 Part 2 (Exp.:54649): " + input.stream().mapToInt(this::digitsInLine).sum());
     }
 
-      private  int digitsInLine(String line){
+    @Override
+    protected long evalInput(boolean bPart2) {
+        if (bPart2)
+            input.replaceAll(this::replaceWords);
+        return input.stream().mapToInt(this::digitsInLine).sum();
+    }
+
+    private  int digitsInLine(String line){
         Pattern digitRegex = Pattern.compile("\\d");
         Matcher digitMatcher = digitRegex.matcher(line);
         if (!digitMatcher.find())

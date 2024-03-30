@@ -28,7 +28,7 @@ public class AoCMain {
         boolean checkAll = false;
 
         if ( checkAll ) {
-            DayOne dayOne = new DayOne(isDebug, inputConnector);
+            DayOne dayOne = new DayOne(isDebug, inputConnector,1 );
             dayOne.displayResults();
             DayTwo dayTwo = new DayTwo(isDebug, inputConnector);
             dayTwo.displayResults();
@@ -53,8 +53,11 @@ public class AoCMain {
             DayTwelve dayTwelve = new DayTwelve(isDebug, inputConnector);
             dayTwelve.displayResults();
             System.out.println("Expectations are individual");
+            DayThirteen dayThirteen = new DayThirteen(isDebug, inputConnector);
+            dayThirteen.displayResults();
         }
-        DayThirteen dayThirteen = new DayThirteen(isDebug, inputConnector);
-        dayThirteen.displayResults();
+        Day One = new DayOne(isDebug, inputConnector, 1);
+        One.displayResults();
+
     }
 }
