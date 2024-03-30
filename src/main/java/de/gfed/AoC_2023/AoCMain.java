@@ -1,13 +1,12 @@
 package de.gfed.AoC_2023;
 
-import java.io.*;
 
 public class AoCMain {
     public static void main(String[] args) {
         AoCInputConnector inputConnector = new AoCInputConnector();
 
         boolean isDebug = false;
-        boolean checkAll = true;
+        boolean checkAll = false;
 
         Day[] days = new Day[]{
                 new DayOne(isDebug, inputConnector),
@@ -22,7 +21,8 @@ public class AoCMain {
                 new DayTen(isDebug, inputConnector),
                 new DayEleven(isDebug, inputConnector),
                 new DayTwelve(isDebug, inputConnector),
-                new DayThirteen(isDebug, inputConnector)
+                new DayThirteen(isDebug, inputConnector),
+                new DayFourteen(isDebug, inputConnector)
         };
         for (int i =(checkAll?0:days.length-1); i<days.length; i++){
             days[i].displayResults();
