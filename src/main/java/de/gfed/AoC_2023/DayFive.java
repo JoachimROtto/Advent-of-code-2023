@@ -190,11 +190,4 @@ public class DayFive extends Day {
         }
         return result;
     }
-
-    private long[] string2LongArray(String line){
-        return Arrays.stream(
-                        line.split(" "))
-                .mapToLong(Long::parseLong).toArray();
-    }
-
 }

@@ -71,10 +71,8 @@ public class DayNine extends Day{
         }
         return result;
     }
-
-    private List<Long> string2LongList(String line){
+    protected List<Long> string2LongList(String line){
         return Arrays.stream(line.split(" "))
                 .map(Long::parseLong).collect(Collectors.toList());
     }
-
 }

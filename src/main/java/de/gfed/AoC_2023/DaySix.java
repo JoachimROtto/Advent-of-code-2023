@@ -53,14 +53,7 @@ public class DaySix extends Day{
     }
 
     private void processInput(List <String> input){
-        time= string2LongArray(input.get(0).substring(input.get(0).indexOf(":")+2));
-        distance= string2LongArray(input.get(1).substring(input.get(1).indexOf(":")+2));
+        time= string2FilteredLongArray(input.get(0).substring(input.get(0).indexOf(":")+2));
+        distance= string2FilteredLongArray(input.get(1).substring(input.get(1).indexOf(":")+2));
     }
-
-    private long[] string2LongArray(String line){
-        return Arrays.stream(
-                        line.split(" ")).filter(c -> !Objects.equals(c, ""))
-                .mapToLong(Long::parseLong).toArray();
-    }
-
 }

@@ -1,6 +1,9 @@
 package de.gfed.AoC_2023;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.*;
 
 public abstract class Day {
     private boolean debugMode;
@@ -41,4 +44,22 @@ public abstract class Day {
     }
 
     protected abstract long evalInput(boolean bPart2);
+
+    protected long[] string2LongArray(String line){
+        return Arrays.stream(
+                        line.split(" "))
+                .mapToLong(Long::parseLong).toArray();
+    }
+
+    protected long[] string2FilteredLongArray(String line){
+        return Arrays.stream(
+                        line.split(" ")).filter(c -> !Objects.equals(c, ""))
+                .mapToLong(Long::parseLong).toArray();
+    }
+
+    protected List<Long> string2LongList(String line){
+        return Arrays.stream(line.split(" "))
+                .map(Long::parseLong).collect(Collectors.toList());
+    }
+
 }
