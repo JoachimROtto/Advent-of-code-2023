@@ -1,6 +1,10 @@
 package de.gfed.AoC_2023;
 
 
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
+
 public class AoCMain {
     public static void main(String[] args) {
         AoCInputConnector inputConnector = new AoCInputConnector();
@@ -23,12 +27,12 @@ public class AoCMain {
                 new DayTwelve(isDebug, inputConnector),
                 new DayThirteen(isDebug, inputConnector),
                 new DayFourteen(isDebug, inputConnector),
-                new DayFifteen(isDebug, inputConnector)
+                new DayFifteen(isDebug, inputConnector),
+                new DaySixteen(isDebug, inputConnector)
         };
         for (int i =(checkAll?0:days.length-1); i<days.length; i++){
             days[i].displayResults();
         }
         System.out.println("Expectations are individual");
-
     }
 }
