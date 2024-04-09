@@ -36,7 +36,7 @@ public class DaySixteen  extends Day{
 
         Part 2:
         As you were told, the system produces too little activation. You can position them differently
-        to select each entrance. Which one generates the most activation? (0,3 ->51)
+        to select each entrance. Which entrance generates the most activation? (0,3 ->51)
         */
 
     }
