@@ -26,7 +26,8 @@ public class AoCMain {
                 new DayFifteen(isDebug, inputConnector),
                 new DaySixteen(isDebug, inputConnector),
                 new DayEighteen(isDebug, inputConnector),
-                new DayNineteen(isDebug, inputConnector)
+                new DayNineteen(isDebug, inputConnector),
+                new DayTwenty(isDebug, inputConnector)
         };
         for (int i =(checkAll?0:days.length-1); i<days.length; i++){
             days[i].displayResults();
