@@ -5,8 +5,11 @@ public class AoCMain {
     public static void main(String[] args) {
         AoCInputConnector inputConnector = new AoCInputConnector();
 
-        boolean isDebug = false;
+        boolean isDebug = true;
         boolean checkAll = false;
+
+        //
+        isDebug=false;
 
         Day[] days = new Day[]{
                 new DayOne(isDebug, inputConnector),
@@ -28,11 +31,13 @@ public class AoCMain {
                 new DayEighteen(isDebug, inputConnector),
                 new DayNineteen(isDebug, inputConnector),
                 new DayTwenty(isDebug, inputConnector),
-                new DayTwentyOne(isDebug, inputConnector)
+                new DayTwentyOne(isDebug, inputConnector),
+                new DayTwentyTwo(isDebug, inputConnector)
         };
         for (int i =(checkAll?0:days.length-1); i<days.length; i++){
             days[i].displayResults();
         }
+
         System.out.println("Expectations are individual");
     }
 }
