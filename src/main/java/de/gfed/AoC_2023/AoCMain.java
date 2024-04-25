@@ -8,7 +8,6 @@ public class AoCMain {
         boolean isDebug = true;
         boolean checkAll = false;
 
-        //
         isDebug=false;
 
         Day[] days = new Day[]{
@@ -32,7 +31,8 @@ public class AoCMain {
                 new DayNineteen(isDebug, inputConnector),
                 new DayTwenty(isDebug, inputConnector),
                 new DayTwentyOne(isDebug, inputConnector),
-                new DayTwentyTwo(isDebug, inputConnector)
+                new DayTwentyTwo(isDebug, inputConnector),
+                new DayTwentyFour(isDebug, inputConnector)
         };
         for (int i =(checkAll?0:days.length-1); i<days.length; i++){
             days[i].displayResults();
